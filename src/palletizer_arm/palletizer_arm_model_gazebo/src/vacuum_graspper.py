@@ -7,6 +7,7 @@ from std_srvs.srv import SetBool
 from geometry_msgs.msg import Twist,Point, Wrench
 import tf
 import numpy as np
+import time
 
 prisos_name = 'prisos_point'
 pub = rospy.Publisher('/gazebo/set_link_state',LinkState,queue_size = 100)
@@ -84,7 +85,7 @@ def main():
     force = Wrench()
     pose = Point()
     new_link_state.reference_frame = 'palletizer_robot::prisos_point'
-    rate = rospy.Rate(100)
+    #rate = rospy.Rate(100)
     dists = []
     centre_box = []
     while not rospy.is_shutdown():
@@ -118,7 +119,8 @@ def main():
                 if(force_on):
                     force_srv(last_attach_link,'world',pose,force,rospy.Time.from_sec(0),rospy.Duration.from_sec(-1.0))
                     force_on = False
-        rate.sleep()
+        #rate.sleep()
+        time.sleep(0.04)
 
 def VacuumService(msg):
     global vacuum_on

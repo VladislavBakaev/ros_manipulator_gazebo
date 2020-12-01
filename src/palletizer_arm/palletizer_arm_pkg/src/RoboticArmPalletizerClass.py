@@ -11,7 +11,7 @@ class RoboticArm:
         self.__l4 = 160.002
         self.__l5 = 90.0
         self.__l6 = 219.0
-        self.__l7 = 6.0
+        self.__l7 = 10.0
 
         self.__convert_const = 2048/pi
         self.__convert_const_AX = 512/pi
@@ -66,12 +66,15 @@ class RoboticArm:
         l6 = self.__l6
         l7 = self.__l7
         try:
+            alpha_temp = atan2(Y,X)
+            tetta = asin(l7/sqrt(X**2+Y**2))
+            alpha1 = alpha_temp+tetta
+            l = sqrt(X**2+Y**2 - l7**2)
+            
+            X = l*cos(alpha1)
+            Y = l*sin(alpha1)
+            
             z = Z+l6-l1
-            # print "z: "+str(z)
-            if X != 0:
-              alpha1 = atan2(Y,X)
-            else:
-              alpha1 = pi/2
 
             x = X/cos(alpha1)
             x = x - l2 - l5 

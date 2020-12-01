@@ -15,7 +15,7 @@ def init_polygon():
     pose_red = Pose()
     pose_green = Pose()
 
-    pose_red.position.z = pose_green.position.z = 0.15
+    pose_red.position.z = pose_green.position.z = 0.10
     pose_red.position.x = 0.1
     pose_green.position.x = 0.2
 
