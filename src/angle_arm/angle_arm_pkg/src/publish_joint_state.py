@@ -117,7 +117,6 @@ def move_of_trapeze_principle(msg):
                     if(gripperEf > 4):
                         break
             last_gripper = current_pose
-    print("true")
     return publish_cmdResponse(True)
      
 def updateEffort(msg):

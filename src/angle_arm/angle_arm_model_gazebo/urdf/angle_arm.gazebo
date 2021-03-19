@@ -108,14 +108,18 @@
   </gazebo>
   <gazebo reference="ang_link7"> 
     <material>Gazebo/Orange</material>
-    <mu1>100.0</mu1>
-    <mu2>100.0</mu2>
+        <kp>10000.0</kp>
+        <kd>10000.0</kd>
+        <mu1>1000.0</mu1>
+        <mu2>1000.0</mu2>
     <minDepth>0.001</minDepth>  
     <maxVel>0</maxVel>  
   </gazebo>  
   <gazebo reference="ang_link6">
-    <mu1>100.0</mu1>
-    <mu2>100.0</mu2>
+        <kp>10000.0</kp>
+        <kd>10000.0</kd>
+        <mu1>1000.0</mu1>
+        <mu2>1000.0</mu2>
     <minDepth>0.001</minDepth>  
     <maxVel>0</maxVel>
     <material>Gazebo/Orange</material> 
