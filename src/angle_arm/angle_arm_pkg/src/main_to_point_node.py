@@ -17,7 +17,7 @@ def ParseMsg(msg):
         coord_list = msg.point.split()
         x = float(coord_list[0])
         y = float(coord_list[1])
-        z = float(coord_list[2])+15
+        z = float(coord_list[2])
         pith = -1.57
         roll = -float(coord_list[3])
         return x,y,z,pith,roll
